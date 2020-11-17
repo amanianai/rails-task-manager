@@ -17,13 +17,6 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
-    if @task.completed
-      @status = "unchecked"
-      @message = "This task not yet completed"
-    else
-      @status = "checked"
-      @message = "This task is completed"
-    end
   end
 
   def edit
@@ -48,6 +41,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :details)
+    params.require(:task).permit(:title, :details, :completed)
   end
 end
