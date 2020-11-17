@@ -1,0 +1,10 @@
+<div class="container">
+  <h3>Edit Task</h3>
+  <%= simple_form_for(@task) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :details %>
+    <%= f.check_box :completed %> Completed?
+    <hr/>
+    <p><%= f.submit %></p>
+  <% end %>
+</div>
